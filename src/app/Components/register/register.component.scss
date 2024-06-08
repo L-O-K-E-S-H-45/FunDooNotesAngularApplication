@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F0F4F9;
+    height: 100%;
+    width: 100%;
+}
+
+.mt-card1 {
+    width: 70%;
+    height: 520px;
+    border-radius: 20px;
+}
+
+.mt-card1-content {
+    display: flex;
+    padding: 30px 30px 30px 50px;
+    height: 100%;
+    width: 100%;
+}
+
+.c-left {
+    width: 56%;
+    height: 100%;
+    padding-right: 20px;
+}
+
+.c-left img {
+    height: 100px;
+    margin-left: -10px;
+}
+
+.c-left h1 {
+    font-size: 28px;
+    margin-top: -20px;
+}
+
+.names-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.names-inputs mat-form-field {
+    width: 48%;
+}
+
+.email-input {
+    width: 100%;
+}
+
+.email-input mat-form-field {
+    width: 100%;
+}
+
+.email-input mat-hint {
+    font-size: 13px;
+    color: rgb(75, 75, 75);
+    margin-top: 5px;
+}
+
+.suffix {
+    background-color: aquamarine;
+    color: black;
+}
+
+.pwd-inputs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.pwd-inputs-div {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pwd-inputs-div mat-form-field {
+    width: 48%;
+}
+
+.pwd-inputs mat-hint {
+    font-size: 13px;
+    color: rgb(75, 75, 75);
+    margin-top: -15px;
+    width: 100%;
+    margin-left: 16px;
+}
+
+.action-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 10px;
+}
+
+.action-btns button {
+    border-radius: 10px;
+}
+
+.c-right {
+    width: 44%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.c-right-image img {
+    height: 310px;
+    width: 400px;
+}
+
+.c-right-h1 {
+    width: 200px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.footer {
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 5px;
+    padding: 0px 10px;
+    background-color: #F0F4F9;
+}
+
+.ft-d2 {
+    display: flex;
+    gap: 30px;
+}
+
+.ft-d1-select {
+    height: 30px;
+    width: fit-content;
+    background-color: #F0F4F9;
+    border: none;
+    color: rgb(73, 73, 73);
+}
+
+.ft-d2 button {
+    border-radius: 8px;
+    color: rgb(73, 73, 73);
+    font-family: "Google Sans", roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.00625rem;
+    line-height: 1.3333333333;
+    outline: none;
+    padding: 8px 12px;
+    text-decoration: none;
+}
