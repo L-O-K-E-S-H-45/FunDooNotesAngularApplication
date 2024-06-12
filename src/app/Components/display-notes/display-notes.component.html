@@ -1,0 +1,22 @@
+<div class="notes-list">
+    <!-- <h1>{{notesList[0]?.title}}</h1> -->
+    <div *ngFor="let notes of notesList" class="card">
+        <mat-card class="notesContainer">
+            <mat-card-title mat-input class="title">
+                <div>{{notes.title}}</div>
+                <button mat-icon-button> <img src="../../../assets/Icons/keep_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt=""> </button>
+            </mat-card-title>
+
+            <mat-card-content>
+                <div class="text" style="min-height: 35px; display: block; overflow-wrap: break-word;">
+                    <h3 class="">{{notes.description}}</h3>
+                </div>
+            </mat-card-content>
+
+            <div>{{notes.notesId}}</div>
+            <app-app-icons [notesObject]="notes" class="app-icons-component"></app-app-icons>
+
+        </mat-card>
+    </div>
+</div>

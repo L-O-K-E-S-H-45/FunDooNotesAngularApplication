@@ -1,0 +1,16 @@
+.app-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -15px;
+    // margin-top: -15px;
+}
+
+.icons-list {
+    display: flex;
+}
+
+.icons-list img {
+    height: 16px;
+    width: 16px;
+}

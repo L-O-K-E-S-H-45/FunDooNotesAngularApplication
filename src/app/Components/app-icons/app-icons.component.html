@@ -1,0 +1,33 @@
+<form class="app-icons">
+        <div class="icons-list">
+                <button mat-icon-button><img src="../../../assets/Icons/add_alert_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                                alt=""></button>
+                <button mat-icon-button><img src="../../../assets/Icons/person_add_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                                alt=""></button>
+                <button mat-icon-button><img src="../../../assets/Icons/palette_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                                alt=""></button>
+                <button mat-icon-button><img src="../../../assets/Icons/image_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                                alt=""></button>
+                <button mat-icon-button (click)="onArchive()"><img
+                                src="../../../assets/Icons/archive_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                <button mat-icon-button [matMenuTriggerFor]="moreMenu"><img
+                                src="../../../assets/Icons/more_vert_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                                alt=""></button>
+
+                <mat-menu #moreMenu="matMenu" xPosition="before">
+                        <button mat-menu-item (click)="onTrash()">Delete Note</button>
+                        <button mat-menu-item>Add label</button>
+                        <button mat-menu-item> Add drawing</button>
+                        <button mat-menu-item>Make a copy</button>
+                        <button mat-menu-item>Show checkboxes</button>
+                </mat-menu>
+
+                <!-- <button mat-icon-button><img src="../../../assets/Icons/undo_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""></button>
+        <button mat-icon-button><img src="../../../assets/Icons/redo_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""></button> -->
+        </div>
+        <!-- <div class="note-close">
+        <button mat-button>Close</button>
+    </div> -->
+</form>

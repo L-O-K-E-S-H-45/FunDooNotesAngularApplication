@@ -1,23 +1,23 @@
 <div class="main-body">
     <mat-card class="mt-card1">
         <mat-card-content class="mt-card1-content">
-            <div class="c-left">
+            <form class="c-left" [formGroup]="LoginForm" (ngSubmit)="onRegister()">
                 <img src="../../../assets/Images/Google logo.png" alt="Google Logo">
                 <h1>Create your Google Account</h1>
                 <div class="names-inputs">
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
-                        <input id="in" matInput placeholder="First name">
+                        <input id="in" matInput placeholder="First name" formControlName="firstName">
                     </mat-form-field>
                     <mat-form-field appearance="outline">
                         <mat-label>Last name</mat-label>
-                        <input matInput placeholder="Last name">
+                        <input matInput placeholder="Last name" formControlName="lastName">
                     </mat-form-field>
                 </div>
                 <div class="email-input">
                     <mat-form-field appearance="outline">
                         <mat-label>Email name</mat-label>
-                        <input matInput placeholder="Email name">
+                        <input matInput placeholder="Email name" formControlName="email">
                         <span matSuffix style="padding-right: 10px; color: rgb(75, 75, 75);">&#64;gmail.com</span>
                         <!-- <mat-icon matSuffix style="padding-right: 10px; color: rgb(73, 73, 73);"> &#64;gmail.com </mat-icon> -->
                         <mat-hint>You can use letters, numbers & periods</mat-hint>
@@ -27,15 +27,16 @@
                     <div class="pwd-inputs-div">
                         <mat-form-field appearance="outline">
                             <mat-label>Password</mat-label>
-                            <input matInput placeholder="Password" [type]="showPassword ? 'text' : 'password'">
+                            <input matInput placeholder="Password" [type]="showPassword ? 'text' : 'password'"
+                                formControlName="password">
                         </mat-form-field>
                         <mat-form-field appearance="outline">
                             <mat-label>Confirm Password</mat-label>
-                            <input matInput placeholder="Confirm Password" [type]="showPassword ? 'text' : 'password'">
+                            <input matInput placeholder="Confirm Password" [type]="showPassword ? 'text' : 'password'"
+                                formControlName="confirmPassword">
                         </mat-form-field>
                     </div>
                     <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
-                    <!-- <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint> -->
                     <mat-checkbox (change)="showPassword = !showPassword">{{ showPassword ? 'Hide password' : 'Show
                         password' }}</mat-checkbox>
                 </div>
@@ -63,7 +64,7 @@
                     <button mat-button color="primary">SignIn instead</button>
                     <button mat-flat-button color="primary">Create</button>
                 </div>
-            </div>
+            </form>
 
             <div class="c-right">
                 <div class="c-right-image">

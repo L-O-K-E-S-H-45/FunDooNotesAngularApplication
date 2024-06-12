@@ -1,0 +1,62 @@
+<form [formGroup]="noteForm" (ngSubmit)="onAddNote()" class="addnote-form">
+    <mat-accordion class="takenote">
+        <mat-expansion-panel hideToggle class="takenote-panel">
+            <mat-expansion-panel-header class="expansion-header">
+                <mat-panel-title>
+                    Note
+                </mat-panel-title>
+                <div class="icons">
+                    <button mat-icon-button>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#5f6368">
+                            <path
+                                d="m424-312 282-282-56-56-226 226-114-114-56 56 170 170ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
+                        </svg>
+                    </button>
+                    <button mat-icon-button>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#5f6368">
+                            <path
+                                d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                        </svg>
+                    </button>
+                    <button mat-icon-button>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#5f6368">
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z" />
+                        </svg>
+                    </button>
+                </div>
+            </mat-expansion-panel-header>
+            <div class="title-pin"><input type="text" placeholder="Title" class="expansion-input"
+                    formControlName="title"> <button mat-icon-button><img
+                        src="../../../assets/Icons/keep_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button></div>
+            <input type="text" placeholder="Take a note..." class="expansion-input" formControlName="description">
+
+            <div class="panel-expansion-footer">
+                <div class="panel-expansion-icons">
+                    <button mat-icon-button><img
+                            src="../../../assets/Icons/add_alert_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                    <button mat-icon-button><img
+                            src="../../../assets/Icons/person_add_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                    <button mat-icon-button><img src="../../../assets/Icons/palette_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                            alt=""></button>
+                    <button mat-icon-button><img src="../../../assets/Icons/image_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                            alt=""></button>
+                    <button mat-icon-button><img src="../../../assets/Icons/archive_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                            alt=""></button>
+                    <button mat-icon-button><img
+                            src="../../../assets/Icons/more_vert_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                    <button mat-icon-button><img src="../../../assets/Icons/undo_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                            alt=""></button>
+                    <button mat-icon-button><img src="../../../assets/Icons/redo_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                            alt=""></button>
+                </div>
+                <div class="note-close">
+                    <button mat-button>Close</button>
+                </div>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</form>
