@@ -1,16 +1,18 @@
 <form class="app-icons">
         <div class="icons-list">
-                <button mat-icon-button><img src="../../../assets/Icons/add_alert_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                <button mat-icon-button title="Remind me"><img
+                                src="../../../assets/Icons/add_alert_24dp_FILL0_wght400_GRAD0_opsz24.svg"
                                 alt=""></button>
-                <button mat-icon-button><img src="../../../assets/Icons/person_add_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                <button mat-icon-button title="Collaborator"><img
+                                src="../../../assets/Icons/person_add_24dp_FILL0_wght400_GRAD0_opsz24.svg"
                                 alt=""></button>
-                <button mat-icon-button><img src="../../../assets/Icons/palette_24dp_FILL0_wght400_GRAD0_opsz24.svg"
-                                alt=""></button>
-                <button mat-icon-button><img src="../../../assets/Icons/image_24dp_FILL0_wght400_GRAD0_opsz24.svg"
-                                alt=""></button>
-                <button mat-icon-button (click)="onArchive()"><img
+                <button mat-icon-button title="Background color" [matMenuTriggerFor]="paletteMenu"><img
+                                src="../../../assets/Icons/palette_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                <button mat-icon-button title="Add Image"><img
+                                src="../../../assets/Icons/image_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+                <button mat-icon-button title="Archive" (click)="onArchive()"><img
                                 src="../../../assets/Icons/archive_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
-                <button mat-icon-button [matMenuTriggerFor]="moreMenu"><img
+                <button mat-icon-button title="More" [matMenuTriggerFor]="moreMenu"><img
                                 src="../../../assets/Icons/more_vert_24dp_FILL0_wght400_GRAD0_opsz24.svg"
                                 alt=""></button>
 
@@ -20,6 +22,13 @@
                         <button mat-menu-item> Add drawing</button>
                         <button mat-menu-item>Make a copy</button>
                         <button mat-menu-item>Show checkboxes</button>
+                </mat-menu>
+
+                <mat-menu #paletteMenu="matMenu" xPosition="before">
+                        <div *ngFor="let colors of colorArray" class="colors-list">
+                                <button mat-menu-list class="color-icon" [style.background]="colors.code"
+                                        (click)="selectColor(colors)"></button>
+                        </div>
                 </mat-menu>
 
                 <!-- <button mat-icon-button><img src="../../../assets/Icons/undo_24dp_FILL0_wght400_GRAD0_opsz24.svg"

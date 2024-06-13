@@ -1,1 +1,21 @@
-<p>updatenote works!</p>
+<div class="update-section">
+    <div class="text-title">
+        <mat-card-title>
+            <input matInput [(ngModel)]="title" class="input-title">
+            <button mat-icon-button><img src="../../../assets/Icons/keep_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                    alt=""></button>
+        </mat-card-title>
+    </div>
+    <div class="text-body">
+        <textarea matInput [(ngModel)]="description" class="input-desc"
+            (input)="adjustTextareaHeight($event)"></textarea>
+    </div>
+    <div class="footer">
+        <div class="icons">
+            <app-app-icons></app-app-icons>
+        </div>
+        <div class="footer-buttons">
+            <button mat-icon-button (click)="closeDialog()" class="close-button">Close</button>
+        </div>
+    </div>
+</div>

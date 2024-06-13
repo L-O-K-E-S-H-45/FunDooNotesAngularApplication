@@ -1,0 +1,77 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* update-section.component.css */
+.update-section {
+    display: flex;
+    flex-direction: column;
+    // width: 100%;
+    // height: 100%;
+    padding: 20px;
+}
+
+.text-title mat-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-title .input-title {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+}
+
+.text-body {
+    // flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.input-desc {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    /* Start with hidden overflow */
+    resize: none;
+    /* Prevent resizing by the user */
+    max-height: 200px;
+    /* Ensure it never exceeds 200px */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons {
+    // flex-grow: 1;
+}
+
+.footer-buttons {
+    // display: flex;
+    // justify-content: flex-end;
+}
+
+.close-button {
+    opacity: 0.9;
+    // background: none;
+    // border: none;
+    cursor: pointer;
+    font-size: 1em;
+    // padding: 10px;
+    // border-radius: 4px;
+}
+
+.close-button:hover {
+    opacity: 1;
+}

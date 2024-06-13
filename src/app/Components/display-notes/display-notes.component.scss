@@ -11,7 +11,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* Adjust to control space around items */
     gap: 20px;
     padding: 10px;
 
@@ -25,12 +24,17 @@
 }
 
 .notesContainer {
-    width: 280px;
+    width: 300px;
     border-radius: 10px;
     padding: 10px;
     padding-left: 15px;
-    // border: solid .1px rgb(175, 175, 175);
 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.notesContainer:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 mat-card-content {
@@ -48,10 +52,21 @@ mat-card-content {
 
 .text {
     margin-top: -20px;
+
+    min-height: 35px;
+    display: block;
+    overflow-wrap: break-word;
 }
 
 .text h3 {
     font-size: 14.5px;
+}
+
+.description-text {
+    white-space: pre-wrap;
+    /* Preserve whitespace and line breaks */
+    font-size: 1em;
+    line-height: 1.5;
 }
 
 .notesid {

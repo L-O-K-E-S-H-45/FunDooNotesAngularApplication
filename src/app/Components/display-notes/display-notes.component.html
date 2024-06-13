@@ -1,16 +1,19 @@
 <div class="notes-list">
     <!-- <h1>{{notesList[0]?.title}}</h1> -->
     <div *ngFor="let notes of notesList" class="card">
-        <mat-card class="notesContainer">
-            <mat-card-title mat-input class="title">
+        <mat-card class="notesContainer" [style.background]="notes.color">
+            <mat-card-title mat-input class="title" (click)="editNoteDialogBox(notes)">
                 <div>{{notes.title}}</div>
                 <button mat-icon-button> <img src="../../../assets/Icons/keep_24dp_FILL0_wght400_GRAD0_opsz24.svg"
                         alt=""> </button>
             </mat-card-title>
 
-            <mat-card-content>
-                <div class="text" style="min-height: 35px; display: block; overflow-wrap: break-word;">
-                    <h3 class="">{{notes.description}}</h3>
+            <mat-card-content (click)="editNoteDialogBox(notes)">
+                <div class="text">
+                    <!--<div class="text" style="min-height: 35px; display: block; overflow-wrap: break-word;" >
+                        {{notes.description}}
+                    </div>-->
+                    <h3 class="description-text">{{notes.description}}</h3>
                 </div>
             </mat-card-content>
 

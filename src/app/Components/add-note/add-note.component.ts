@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NotesService } from '../../Services/notes/notes.service';
 
@@ -9,6 +9,9 @@ import { NotesService } from '../../Services/notes/notes.service';
 })
 export class AddNoteComponent implements OnInit {
   noteForm!: FormGroup
+
+  @Output() refreshAddEvent = new EventEmitter<string>();
+
   constructor(private noteService: NotesService, private formBuilder: FormBuilder) { }
   ngOnInit(): void {
     this.noteForm = this.formBuilder.group({
@@ -24,6 +27,7 @@ export class AddNoteComponent implements OnInit {
     }
     this.noteService.AddNote(data).subscribe((response: any) => {
       console.log(response);
+      this.refreshAddEvent.emit(response);
     })
   }
 

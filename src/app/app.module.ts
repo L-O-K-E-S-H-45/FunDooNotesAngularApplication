@@ -35,6 +35,7 @@ import { DisplayNotesComponent } from './Components/display-notes/display-notes.
 import { AppIconsComponent } from './Components/app-icons/app-icons.component';
 
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
 
 @NgModule({
@@ -71,7 +72,8 @@ import { UpdatenoteComponent } from './Components/updatenote/updatenote.componen
     MatExpansionModule,
     MatDatepickerModule,
     HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule
 
   ],
   providers: [

@@ -27,4 +27,9 @@ export class NotesContainerComponent implements OnInit {
     })
   }
 
+  addEvent($event: any) {
+    console.log('added note refreshed automatically by event');
+    this.onAddNote()
+  }
+
 }
