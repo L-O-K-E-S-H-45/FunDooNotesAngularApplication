@@ -1,2 +1,3 @@
 <app-add-note (refreshAddEvent)="addEvent($event)"></app-add-note>
-<app-display-notes [notesList]="notesArray"></app-display-notes>
+<app-display-notes [notesList]="notesArray"
+    (updateRefreshEvent)="recievedRefresheventFromDisplayToGetAll($event)"></app-display-notes>

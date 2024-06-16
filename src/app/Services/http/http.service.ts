@@ -24,4 +24,10 @@ export class HttpService {
     return this.httpClient.put(reqUrl, payload, token && httpOptions);
   }
 
+  deleteService(reqUrl: string, token: boolean = true, httpOptions: any = {}) {
+    return this.httpClient.delete(reqUrl, token && httpOptions);
+  }
+
+
+
 }

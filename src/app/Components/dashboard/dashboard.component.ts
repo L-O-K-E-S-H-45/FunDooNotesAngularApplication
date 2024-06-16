@@ -1,4 +1,6 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../../Services/DataService/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +12,10 @@ export class DashboardComponent {
   isFocused: boolean = false;
 
   @ViewChild('searchInput') searchInput!: ElementRef;
+
+  @Output() updateRefreshEvent = new EventEmitter<string>();
+
+  constructor(private route: Router, private dataService: DataService) { }
 
   onFocus() {
     this.isFocused = true;
@@ -25,5 +31,17 @@ export class DashboardComponent {
     this.value = '';
   }
 
+  archiveNotes() {
+    this.route.navigateByUrl('/home/archives');
+  }
+
+  homePage() {
+    this.route.navigateByUrl('/home/notes')
+  }
+
+  search(event: any) {
+    console.log(event.target.value);
+    this.dataService.outgoingData(event.target.value);
+  }
 
 }

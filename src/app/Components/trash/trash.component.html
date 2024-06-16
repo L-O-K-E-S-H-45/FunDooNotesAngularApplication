@@ -1,0 +1,28 @@
+<div class="notes-list">
+    <div *ngFor="let notes of trashList" class="card">
+        <mat-card class="notesContainer" [style.background]="notes.color">
+            <mat-card-title mat-input class="title">
+                <div>{{notes.title}}</div>
+                <button mat-icon-button> <img src="../../../assets/Icons/keep_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt=""> </button>
+            </mat-card-title>
+
+            <mat-card-content>
+                <div class="text">
+                    <h3 class="description-text">{{notes.description}}</h3>
+                </div>
+            </mat-card-content>
+
+            <div>{{notes.notesId}}</div>
+            <div class="buttons">
+                <button mat-icon-button title="Delete Forever">
+                    <img src="../../../assets/Icons/delete_forever_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </button>
+                <button (click)="restoreNoteFromTrash(notes)" mat-icon-button title="Restore">
+                    <img src="../../../assets/Icons/restore_from_trash_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+                </button>
+            </div>
+
+        </mat-card>
+    </div>
+</div>

@@ -12,7 +12,7 @@
     </div>
     <div class="footer">
         <div class="icons">
-            <app-app-icons></app-app-icons>
+            <app-app-icons (refreshIconEventFromUpdate)="recievedRefreshIconEventFromUpdate($event)"></app-app-icons>
         </div>
         <div class="footer-buttons">
             <button mat-icon-button (click)="closeDialog()" class="close-button">Close</button>

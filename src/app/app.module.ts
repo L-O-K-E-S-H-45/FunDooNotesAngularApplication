@@ -28,7 +28,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import { MatCalendarCellClassFunction, MatDatepickerModule } from '@angular/material/datepicker';
-import { provideNativeDateAdapter } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { NotesContainerComponent } from './Components/notes-container/notes-container.component';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
@@ -37,6 +36,11 @@ import { AppIconsComponent } from './Components/app-icons/app-icons.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UpdatenoteComponent } from './Components/updatenote/updatenote.component';
+import { AuthguardService } from './Components/shared/authguard.service';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { TodoComponent } from './Components/todo/todo.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +55,10 @@ import { UpdatenoteComponent } from './Components/updatenote/updatenote.componen
     DisplayNotesComponent,
     AppIconsComponent,
     UpdatenoteComponent,
+    ArchiveComponent,
+    TrashComponent,
+    TodoComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +88,7 @@ import { UpdatenoteComponent } from './Components/updatenote/updatenote.componen
     provideClientHydration(),
     provideAnimationsAsync(),
 
-    provideNativeDateAdapter()
+    AuthguardService
 
   ],
   bootstrap: [AppComponent]

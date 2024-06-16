@@ -1,0 +1,35 @@
+<div class="todo-main">
+    <div class="">
+        <h1 class="todo-header">Todo List</h1>
+        <hr>
+        <div class="todo-content">
+            <div class="inputs">
+                <input id="inp" [(ngModel)]="todo" type="text" placeholder="Enter Todo">
+                <div class="todo-buttons">
+                    <button class="btn" mat-button (click)="addTodo()">Add</button>
+                </div>
+            </div>
+            <div class="list">
+                <ol class="number" id="list">
+                    <div *ngFor="let todos of TodoList; let i = index" class="li-btns">
+                        <li>
+                            {{todos}}
+                        </li>
+                        <button mat-button (click)="editTodo(i)">Edit</button>
+                        <button mat-button (click)="deleteTodo(i)">Delete</button>
+                    </div>
+                </ol>
+                <div *ngFor="let todo of todos">
+                    <li *ngIf="!todo.isEditing">
+                        {{todo}}
+                        <button mat-button (click)="edit(todo)">Edit</button>
+                    </li>
+                    <div *ngIf="todo.isEditing">
+                        <input type="text" [value]="todo">
+                        <button mat-button (click)="save(todo)">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

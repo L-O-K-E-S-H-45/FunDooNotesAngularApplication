@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpService } from '../http/http.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -8,7 +7,6 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class NotesService {
   token: any;
-  noteForm!: FormGroup
 
   constructor(private httpService: HttpService) { this.token = localStorage.getItem('token') }
 

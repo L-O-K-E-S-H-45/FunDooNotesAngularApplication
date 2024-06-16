@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NotesService } from '../../Services/notes/notes.service';
 
 @Component({
@@ -8,6 +8,11 @@ import { NotesService } from '../../Services/notes/notes.service';
 })
 export class AppIconsComponent implements OnInit {
   @Input() notesObject: any;
+  @Output() refreshIconEvent = new EventEmitter<string>();
+
+
+  // @Output() refreshEventForRestoreArchive = new EventEmitter<string>();
+
   constructor(private noteService: NotesService) { }
 
   ngOnInit(): void {
@@ -20,6 +25,9 @@ export class AppIconsComponent implements OnInit {
     console.log(reqData)
     this.noteService.archiveNotes(reqData).subscribe((response: any) => {
       console.log(response);
+      this.refreshIconEvent.emit(response);
+
+      // this.refreshEventForRestoreArchive.emit(response);
     })
   }
 
@@ -30,6 +38,7 @@ export class AppIconsComponent implements OnInit {
     console.log(reqData)
     this.noteService.trashNote(reqData).subscribe((response: any) => {
       console.log(response);
+      this.refreshIconEvent.emit(response);
     })
   }
 
@@ -70,7 +79,7 @@ export class AppIconsComponent implements OnInit {
     }
     this.noteService.notesColor(reqData).subscribe((response: any) => {
       console.log(response);
-
+      this.refreshIconEvent.emit(response);
     })
   }
 

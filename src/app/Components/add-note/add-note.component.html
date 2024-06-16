@@ -1,6 +1,6 @@
 <form [formGroup]="noteForm" (ngSubmit)="onAddNote()" class="addnote-form">
     <mat-accordion class="takenote">
-        <mat-expansion-panel hideToggle class="takenote-panel">
+        <mat-expansion-panel hideToggle #panel class="takenote-panel">
             <mat-expansion-panel-header class="expansion-header">
                 <mat-panel-title>
                     Note
@@ -54,7 +54,7 @@
                             alt=""></button>
                 </div>
                 <div class="note-close">
-                    <button mat-button>Close</button>
+                    <button mat-button (click)="closePanel(panel)">Close</button>
                 </div>
             </div>
         </mat-expansion-panel>

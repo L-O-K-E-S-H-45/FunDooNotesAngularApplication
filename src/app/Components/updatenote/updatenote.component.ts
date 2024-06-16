@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { NotesService } from '../../Services/notes/notes.service';
 
@@ -13,6 +13,9 @@ export class UpdatenoteComponent implements OnInit {
   description: any;
   id: any;
   color: any;
+
+  @Output() updateRefreshEvent = new EventEmitter<string>();
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogbox: MatDialogRef<UpdatenoteComponent>,
@@ -46,6 +49,11 @@ export class UpdatenoteComponent implements OnInit {
       console.log(response);
       this.dialogbox.close()
     })
+  }
+
+  recievedRefreshIconEventFromUpdate($event: any) {
+    console.log($event);
+    this.updateRefreshEvent.emit($event);
   }
 
 }
