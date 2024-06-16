@@ -25,17 +25,18 @@ export class AddNoteComponent implements OnInit {
 
   onAddNote() {
     let data = {
-      title: this.noteForm.value.title,
-      description: this.noteForm.value.description
-    }
+      title: this.noteForm.value.title || '', // Ensure title is not null
+      description: this.noteForm.value.description || '' // Ensure description is not null
+    };
     this.noteService.AddNote(data).subscribe((response: any) => {
       console.log(response);
       this.refreshAddEvent.emit(response);
+      this.noteForm.reset(); // This will clear the input fields
+      if (this.panel) {
+        this.panel.close();
+      }
     })
   }
 
-  closePanel(panel: MatExpansionPanel) {
-    panel.close();
-  }
 
 }
